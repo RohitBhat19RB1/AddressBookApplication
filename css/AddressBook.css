@@ -185,3 +185,10 @@ textarea:focus + label, input:not(:placeholder-shown) + label {
     transform: scale(0.75) translateY(-70%) translateX(-14px);
 } 
  
+error-output{
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    height: 10px;
+    padding-top: 3px;
+} 
