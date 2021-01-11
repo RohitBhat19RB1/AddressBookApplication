@@ -22,14 +22,14 @@
             <div class="form-head">PERSON ADDRESS FORM</div>
             <a href="#"><img src="../assets/icons/x-mark.png" width="30px" style="float: right;"></a>
         </div>
-        <form class="form">
+        <form class="form" onsubmit="save()">
             <div class="row-content">
                 <input class="input text" type="text" id="name" name="name" placeholder=" " autocomplete="off" required>
                 <label>Full Name</label>
                 <error-output class="name-error" for="name"></error-output>  
             </div>
             <div class="row-content">
-                <textarea class="input text" id="address" name="address" placeholder=" " autocomplete="off"></textarea>   
+                <textarea class="input text" id="address" name="address" placeholder=" " autocomplete="off" required></textarea>   
                 <label>Address</label>
             </div>
             <div class="row-select">
