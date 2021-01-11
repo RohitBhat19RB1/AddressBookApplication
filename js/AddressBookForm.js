@@ -83,3 +83,17 @@ const createNewId = () => {
     localStorage.setItem("AddressBookId", addressBookId);
     return addressBookId;
 };
+
+const resetForm = () => {
+    setValue("#name", "");
+    setValue("#address", "");
+    setValue("#city", "");
+    setValue("#state", "");
+    setValue("#zip", "");
+    setValue("#tel", "");
+};  
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}; 
