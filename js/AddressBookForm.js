@@ -2,22 +2,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const nameError = document.querySelector('.name-error');
     name.addEventListener('input', function(){
-        let nameRegex = RegExp('^[A-Z][a-zA-Z]{2,}([ ][A-Z]([a-z]{1,})*)*$');
-        if(nameRegex.test(name.value)){
+        if(name.value.length == 0){
             nameError.textContent = "";
-        } else {
-            nameError.textContent = "Name is Incorrect";
+            return;
         }
+        try{
+            (new AddressBookData()).name = name.value;;
+            nameError.textContent = "";
+        } catch(exception){
+            nameError.textContent = exception;
+      }
     });
 
     const tel = document.querySelector('#tel');
     const telError = document.querySelector('.tel-error');
     tel.addEventListener('input', function(){
-        let telRegex = RegExp('^([\+]?[0-9]{2})?[-\.]?[ ]?[0-9]{10}$');
-        if(telRegex.test(tel.value)){
+        if(tel.value.length == 0){
             telError.textContent = "";
-        } else {
-            telError.textContent = "Phone Number is Incorrect";
+            return;
         }
+        try{
+            (new AddressBookData()).tel = tel.value;;
+              telError.textContent = "";
+            } catch(exception){
+                telError.textContent = exception;
+            }
     });    
 }); 
