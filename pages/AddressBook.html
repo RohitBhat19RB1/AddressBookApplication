@@ -23,6 +23,55 @@
             <a href="#"><img src="../assets/icons/x-mark.png" width="30px" style="float: right;"></a>
         </div>
         <form class="form">
+            <div class="row-content">
+                <input class="input text" type="text" id="name" name="name" placeholder=" " autocomplete="off" required>
+                <label>Full Name</label>
+                <error-output class="name-error" for="name"></error-output>  
+            </div>
+            <div class="row-content">
+                <textarea class="input text" id="address" name="address" placeholder=" " autocomplete="off"></textarea>   
+                <label>Address</label>
+            </div>
+            <div class="row-select">
+                    <select id="city" name="city">
+                        <option>Select City</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Kochi">Kochi</option>
+                        <option value="Panji">Panji</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Surat">Surat</option>
+                    </select>
+                    <select id="state" name="state">
+                        <option>Select State</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujrath">Gujrath</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajsthan">Rajsthan</option>
+                    </select>
+                    <select id="zip" name="zip">
+                        <option>Zip Code</option>
+                        <option value="411007">411007</option>
+                        <option value="412409">412409</option>
+                        <option value="520258">520258</option>
+                        <option value="612654">612654</option>
+                        <option value="541541">541541</option>
+                        <option value="123456">123456</option>
+                    </select>
+                    <error-output class="date-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <input class="input text" type="tel" id="tel" name="tel" placeholder=" " autocomplete="off" required>
+                <label>Phone Number</label>
+                <error-output class="tel-error" for="tel"></error-output>    
+            </div>
+
         </form>
     </div>
 </body>
