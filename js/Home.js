@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     addressBookList = getAddressBookDataFromStorage();
     document.querySelector(".contact-count").textContent = addressBookList.length;
     createInnerHtml();
-    localStorage.removeItem('editEmp');
+    localStorage.removeItem('editPerson');
 });
 
 const getAddressBookDataFromStorage = () => {
@@ -26,8 +26,8 @@ const createInnerHtml = () => {
                 <td>${addressBookData._zip}</td>
                 <td>${addressBookData._tel}</td>
                 <td>
-                    <img id="${addressBookData._id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                    <img id="${addressBookData._id}" onclick="update(this)" alt="edit" src="../assets/icons/create-black-18dp.svg">
+                    <img id="${addressBookData.id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
+                    <img id="${addressBookData.id}" onclick="update(this)" alt="edit" src="../assets/icons/create-black-18dp.svg">
                 </td>
             </tr>
         `;
@@ -36,17 +36,17 @@ const createInnerHtml = () => {
 };
 
 const remove = (node) => {
-    let addressBookData = addressBookList.find(personData => personData._id == node.id);
+    let addressBookData = addressBookList.find(personData => personData.id == node.id);
     if(!addressBookData) return;
-    const index = addressBookList.map(personData => personData._id)
-                  .indexOf(addressBookData._id);
+    const index = addressBookList.map(personData => personData.id)
+                  .indexOf(addressBookData.id);
     addressBookList.splice(index, 1);
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
     createInnerHtml();              
 }
 
 const update = (node) => {
-    let addressBookData = addressBookList.find(personData => personData._id == node.id);
+    let addressBookData = addressBookList.find(personData => personData.id == node.id);
     if(!addressBookData) return;
     localStorage.setItem('editPerson',JSON.stringify(addressBookData));
     window.location.replace(site_properties.add_address_book_page);
