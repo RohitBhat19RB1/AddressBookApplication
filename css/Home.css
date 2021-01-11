@@ -136,3 +136,57 @@ td{
     color: #3d3d3d;
     opacity: 1;
 }
+
+@media only screen and (max-width: 420px){
+    .add-button{
+        font: normal normal normal 16px/23px Roboto;
+        padding: 1px 6px;
+    }
+    .add-button > img {
+        width: 20px;
+    }
+    .header-content {
+        padding-bottom: 20px;
+    }
+    .logo-content{
+        width: 50%;
+    }
+    .address-book-text {
+        font-size: 18px;
+    }    
+    .address-detail-text{
+        font: normal normal bold 18px/21px Roboto;
+        padding-right: 10px;
+    }
+    .table{
+        border-collapse: collapse;
+    }
+    .table-main{
+        overflow-x:auto;
+    }
+    th{
+        font: normal normal normal 14px/20px Roboto;
+    }
+    td{
+        font: normal normal normal 12px/19px Roboto;
+    }
+    .header{
+        padding-left: 20px;
+    }
+}    
+
+@media only screen and (min-width: 421px) and (max-width: 800px){
+    .add-button{
+        font-size: 16px;
+        padding: 3px 8px;
+    }
+    .add-button > img {
+        width: 22px;
+    }
+    .address-detail-text{
+        font-size: 20px;
+    }
+    th{
+        font-size: 16px;
+    }
+}
